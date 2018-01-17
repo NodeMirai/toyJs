@@ -1,1 +1,1 @@
-# translateArticle
+# js常用方法汇总
