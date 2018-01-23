@@ -27,6 +27,10 @@ var deepClone = function(src, dist) {
 
 }
 
+/**
+ *  判断传入参数为何种类型
+ * @returns e.g. "Array" or "Object"
+ */
 var objType = function(obj) {
     return Object.prototype.toString.call(obj).match(/(\w+)]$/)
 }
