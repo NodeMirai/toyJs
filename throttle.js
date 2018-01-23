@@ -1,6 +1,6 @@
 /**
  * 节流方法
- * @description 截流方法可确保只执行事件触发的最后一次操作，一般适用于某些可能被连续触发的事件
+ * @description 截流方法可确保只执行事件触发的最后一次操作，一般适用于某些可能被连续触发的事件(mousemove、scroll、)
  * @param method 需要进行节流的方法
  * @param context 由于setTimeout函数内部域为window，因此需要该函数进行修正
  */
