@@ -35,7 +35,7 @@ var objType = function(obj) {
     return Object.prototype.toString.call(obj).match(/(\w+)]$/)
 }
 
-var srcTest = {
+/* var srcTest = {
     name: "123",
     arr: [ 
         { hehe: "hehe" },
@@ -49,4 +49,6 @@ var srcTest = {
 var dist = {}
 
 deepClone(srcTest, dist)
-console.log(dist)
+console.log(dist) */
+
+module.exports = deepClone

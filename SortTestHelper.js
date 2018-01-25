@@ -20,11 +20,11 @@ module.exports = {
      * 测试算法在给定用例下的执行时间
      */
     computeMethodTime(arr, method, rangeL, rangeR) {
-        console.log(arr)
+        console.log("arr:", arr)
         var start = new Date().getTime()
         method(arr, rangeL, rangeR)
         var end = new Date().getTime()
-        console.log(arr)
+        console.log("target:", arr)
         return end - start
     }
 

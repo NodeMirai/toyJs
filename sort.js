@@ -3,6 +3,7 @@
  */
 
 var helper = require("./SortTestHelper")
+var deepClone = require("./deepClone")
 
 /**
  * 选择排序算法 O(n^2)
@@ -64,7 +65,7 @@ function insertSort(arr, callback) {
 // console.log("insertSort",helper.computeMethodTime(helper.generateRandomArray(10000, 0, 10000), insertSort))
 
 /**
- * 快速排序
+ * 快速排序 O(nlogn) 对于近乎有序的数组
  * @description 思路：三个重要的标定点：l对比值,[l+1,j]小于arr[l],[j+i,i]大于arr[l]
  * @param {*} arr 
  * @param {*} rangeL 
@@ -99,4 +100,47 @@ function quickSort(arr, rangeL, rangeR, callback) {
   quickSort(arr, j + 1, rangeR)
 }
 
-console.log("quickSort", helper.computeMethodTime(helper.generateRandomArray(10, 0, 10), quickSort, 0, 10))
+// console.log("quickSort", helper.computeMethodTime(helper.generateRandomArray(10, 0, 10), quickSort, 0, 10))
+
+/**
+ * 归并排序：时间O(nlogn)  空间O(n)
+ * @description 思路：找出中间位置，对左右两边内容进行归并，然后对两个有序数组进行比较从而成为完整数组
+ */
+function mergeSort(arr, l, r) {
+    // 递归终止条件
+    if (l >= r) {
+        return
+    }
+    //console.log(arr)
+    // 中间点
+    var mid = Math.floor((l+r)/2)
+
+    // 左右两侧使用归并保证排列有序
+    mergeSort(arr, l, mid)
+    mergeSort(arr, mid+1, r)
+
+    // 对两个有序的元素进行排序,temp临时空间大小为rangeR-rangeL+1
+    var temp = [],i = l, j = mid + 1
+    for (var n = l; n <= r; n++) {
+        temp.push(arr[n])
+    }
+    
+    for (var k = l; k <= r; k++) {
+        if (i > mid) {
+            arr[k] = temp[j - l]
+            j++
+        } else if (j > r) {
+            arr[k] = temp[i - l]
+            i++
+        } else if (temp[i - l] < temp[j - l]) {
+            arr[k] = temp[i - l]
+            i++
+        } else {
+            arr[k] = temp[j - l]
+            j++
+        }
+    }
+    return temp
+}
+
+console.log("mergeSort", helper.computeMethodTime(helper.generateRandomArray(10, 0, 10), mergeSort, 0, 9))
