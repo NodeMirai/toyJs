@@ -63,6 +63,14 @@ function insertSort(arr, callback) {
 
 // console.log("insertSort",helper.computeMethodTime(helper.generateRandomArray(10000, 0, 10000), insertSort))
 
+/**
+ * 快速排序
+ * @description 思路：三个重要的标定点：l对比值,[l+1,j]小于arr[l],[j+i,i]大于arr[l]
+ * @param {*} arr 
+ * @param {*} rangeL 
+ * @param {*} rangeR 
+ * @param {*} callback 
+ */
 function quickSort(arr, rangeL, rangeR, callback) {
     callback = callback || function (a, b) { return a > b }
     arr = arr || []
