@@ -1,0 +1,23 @@
+{
+  "name": "toyjs",
+  "version": "1.0.0",
+  "description": "1. 函数节流：对于某些事件的触发时机可能是连续的，此时为了减少浏览器资源消耗需要对连续的出发进行\"节流\" 2. 深拷贝：需要注意的是ES6中的Object.assign方法为浅拷贝",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NodeMirai/toyJs.git"
+  },
+  "keywords": [
+    "canvas",
+    "util"
+  ],
+  "author": "nodemirai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NodeMirai/toyJs/issues"
+  },
+  "homepage": "https://github.com/NodeMirai/toyJs#readme"
+}
